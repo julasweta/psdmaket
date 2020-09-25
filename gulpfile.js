@@ -39,19 +39,6 @@ const cleancss = require('gulp-clean-css');
 	// Подключаем модуль del
 	const del = require('del');
 
-gulp.task('sass-compile', function () {
-  return gulp.src('./src/scss/**/*.scss')
-    .pipe(sourcemaps.init())
-    .pipe(sass().on('error', sass.logError))
-    .pipe(autoprefixer(['last 30 version', '>2%', 'ie 8'], {
-      cascade: true
-    }))
-    .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest('./src/css/'))
-    .pipe(browserSync.reload({
-      stream: true
-    }))
-})
 
 // Определяем логику работы Browsersync
 function browsersync() {
