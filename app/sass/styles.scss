@@ -1,20 +1,239 @@
-// styles.scss
+// подключение файлов стилей и шрифтов
+@import '../css/reset';
 @import '../../node_modules/normalize.css/normalize';
 @import url('https://fonts.googleapis.com/css2?family=Oregano&family=PT+Serif&family=Roboto&display=swap');
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/regular.scss";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/v4-shims.scss";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/icons.scss";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/mixins";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/variables";
+//переменные
 $oregano:Oregano,
 cursive;
 $roboto:Roboto,
 sans-serif;
+$myriad:myriad-pro,
+sans-serif;
 
-* {
-    outline: 0;
-    padding: 0;
-    margin: 0;
-    border: 0;
+//убираем нижнюю прокрутку
+html {
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
 }
 
 body {
-    background-color: blue;
+    background-color: #ffffff;
     font-family: $oregano;
-    font-size: 300%;
+    font-size: 87.5%;
+
+}
+
+
+.header {
+    background-image: url('../images/src/header.jpg');
+    width: 100%;
+    height: 100vh;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.header_top {
+    background-color: transparentize(#252a35, .3);
+    width: 100%;
+    height: 100px;
+    position: relative;
+    display: flex;
+    padding-top: 3%;
+
+}
+
+.logo {
+    position: static;
+    left: 50%;
+    width: 15%;
+    float: left;
+    color: white;
+
+}
+
+.logotyp {
+    background-image: url('../images/src/logo.png');
+    height: 100px;
+    width: auto;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+.menu {
+    font-family: $roboto;
+    float: right;
+    width: 40%;
+
+
+    ol li {
+        display: inline-block;
+
+        a {
+            color: rgb(255, 255, 255);
+            margin-right: 3.3em;
+
+            &:hover {
+                border-bottom: 2px solid #0be60b;
+            }
+        }
+    }
+}
+
+.hotline {
+    width: 30%;
+    float: right;
+    color: #000;
+
+}
+
+// подключение файлов стилей и шрифтов
+@import '../css/reset';
+@import '../../node_modules/normalize.css/normalize';
+@import url('https://fonts.googleapis.com/css2?family=Oregano&family=PT+Serif&family=Roboto&display=swap');
+
+//переменные
+$oregano:Oregano,
+cursive;
+$roboto:Roboto,
+sans-serif;
+$myriad:myriad-pro,
+sans-serif;
+
+//убираем нижнюю прокрутку
+html {
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: #ffffff;
+    font-family: $oregano;
+    font-size: 87.5%;
+
+}
+
+// HEADER
+.header {
+    background-image: url('../images/src/header.jpg');
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.header_top {
+    background-color: transparentize(#252a35, .3);
+    width: 100%;
+    height: 100px;
+    position: relative;
+    display: flex;
+    text-align: center;
+}
+
+.logo {
+    float: left;
+    position: static;
+    color: white;
+
+    .logotyp {
+        background-image: url('../images/src/logo.png');
+        height: 100px;
+        width: auto;
+        background-repeat: no-repeat;
+        z-index: -1;
+    }
+}
+
+
+
+.menu {
+
+    width: 40%;
+    padding-left: 15%;
+    font-family: $roboto;
+    font-weight: bold;
+    line-height: 2.143;
+
+    ol li {
+        display: inline-block;
+
+        a {
+            color: rgb(255, 255, 255);
+            margin-right: 3.3em;
+
+            &:hover {
+                border-bottom: 2px solid #0be60b;
+            }
+        }
+    }
+}
+
+.hotline {
+    width: 18%;
+    display: flex;
+    color: rgb(255, 255, 255);
+    font-family: $roboto;
+    font-weight: bold;
+    line-height: 2.143;
+
+    a {
+        font-size: 150%;
+        color: rgb(30, 175, 19);
+        font-weight: bold;
+        line-height: 1;
+        text-align: left;
+        font-family: $roboto;
+    }
+}
+
+.web {
+    display: flex;
+    width: 10%;
+    float: right;
+
+    .web1,
+    .web2,
+    .web3 {
+        padding-left: 15%;
+
+    }
+
+    .web1::before,
+    .web2::before,
+    .web3::before {
+        font-family: "Font Awesome 5 Brands";
+        font-weight: 900;
+        color: rgb(255, 255, 255);
+        position: static;
+        font-size: 24px;
+    }
+
+    .web1::before {
+        content: "\f082";
+    }
+
+    .web2::before {
+        content: "\f081";
+    }
+
+    .web3::before {
+        content: "\f0d5";
+    }
 }
