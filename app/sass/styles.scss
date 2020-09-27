@@ -1,6 +1,9 @@
 // подключение файлов стилей и шрифтов
 @import '../css/reset';
 @import '../../node_modules/normalize.css/normalize';
+@import'../../node_modules/swiper/swiper-bundle';
+@import'../../node_modules/swiper/swiper-bundle.min';
+@import'../../node_modules/swiper/components/pagination/pagination.scss';
 @import url('https://fonts.googleapis.com/css2?family=Oregano&family=PT+Serif&family=Roboto&display=swap');
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
@@ -135,13 +138,18 @@ body {
     height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.container {
+    width: 100%;
+    text-align: center;
 
 }
 
 .header_top {
     background-color: transparentize(#252a35, .3);
-    width: 100%;
     height: 100px;
+
     position: relative;
     display: flex;
     text-align: center;
@@ -151,6 +159,8 @@ body {
     float: left;
     position: static;
     color: white;
+    width: 18%;
+    padding-left: 3%;
 
     .logotyp {
         background-image: url('../images/src/logo.png');
@@ -165,8 +175,8 @@ body {
 
 .menu {
 
-    width: 40%;
-    padding-left: 15%;
+    width: 45%;
+    padding-left: 12%;
     font-family: $roboto;
     font-weight: bold;
     line-height: 2.143;
@@ -186,12 +196,16 @@ body {
 }
 
 .hotline {
-    width: 18%;
+margin-left: 3%;
     display: flex;
     color: rgb(255, 255, 255);
     font-family: $roboto;
     font-weight: bold;
     line-height: 2.143;
+
+    .hot {
+        padding-right: 5%;
+    }
 
     a {
         font-size: 150%;
@@ -200,40 +214,62 @@ body {
         line-height: 1;
         text-align: left;
         font-family: $roboto;
+
     }
 }
+.line{
+    border-left: 1px solid rgb(255, 255, 255);
+    height: 2em;
+    margin-right: 2%;
+    opacity: 0.102;
+}
+
+
 
 .web {
     display: flex;
-    width: 10%;
-    float: right;
+    width: 8%;
+    padding-right: 3%;
 
-    .web1,
-    .web2,
-    .web3 {
-        padding-left: 15%;
-
-    }
-
-    .web1::before,
-    .web2::before,
-    .web3::before {
-        font-family: "Font Awesome 5 Brands";
-        font-weight: 900;
-        color: rgb(255, 255, 255);
-        position: static;
-        font-size: 24px;
-    }
-
-    .web1::before {
-        content: "\f082";
-    }
-
-    .web2::before {
-        content: "\f081";
-    }
-
-    .web3::before {
-        content: "\f0d5";
-    }
 }
+
+.icon-a {
+    color: #FFF;
+    font-size: 1.7em;
+line-height: 1.2em;
+}
+
+.icon-b {
+    color:#5c6262;
+ font-size: 2em;
+
+
+}
+//CAROUSEL
+ .swiper-container {
+     width: 80%;
+
+ }
+
+ .swiper-slide {
+     height: 200px;
+     text-align: center;
+     font-size: 18px;
+     background: rgb(84, 102, 207);
+
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+
+
+ }

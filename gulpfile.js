@@ -41,8 +41,9 @@ function browsersync() {
 // JS Работа со скриптами
 function scripts() {
   return src([ // Берём файлы из источников
-      'node_modules/@fortawesome/fontawesome-free/js/fontawesome.js',
-      //'node_modules/jquery/dist/jquery.min.js', // Пример подключения библиотеки
+'node_modules/swiper/swiper-bundle.min.js',
+      //'node_modules/@fortawesome/fontawesome-free/js/fontawesome.js',
+      //'node_modules/jquery-custom/jquery.1/dist/jquery.min.js', // Пример подключения библиотеки
       'app/js/app.js', // Пользовательские скрипты, использующие библиотеку, должны быть подключены в конце
     ])
     .pipe(concat('app.min.js')) // Конкатенируем в один файл
@@ -55,7 +56,9 @@ function scripts() {
 
 //STYLES
 function styles() {
-  return src('app/' + preprocessor + '/styles.scss' + '') // Выбираем источник: "app/sass/styles.scss"
+  return src('app/' + preprocessor + '/styles.scss' + '',
+
+    ) // Выбираем источник: "app/sass/styles.scss"
     .pipe(eval(preprocessor)()) // Преобразуем значение переменной "preprocessor" в функцию
     .pipe(concat('app.min.css')) // Конкатенируем в файл app.min.js
     .pipe(autoprefixer({ // Создадим префиксы с помощью Autoprefixer
@@ -98,9 +101,9 @@ function cleanimg() {
 // Мониторим файлы препроцессора на изменения
 // Мониторим файлы HTML на изменения
 function startwatch() {
- watch(['app/**/*.js', '!app/**/*.min.js'], scripts);
- watch('app/**/' + preprocessor + '/**/*', styles);
- watch('app/**/*.html').on('change', browserSync.reload);
+  watch(['app/**/*.js', '!app/**/*.min.js'], scripts);
+  watch('app/**/' + preprocessor + '/**/*', styles);
+  watch('app/**/*.html').on('change', browserSync.reload);
 }
 
 // Экспортируем функцию browsersync() как таск browsersync. Значение после знака = это имеющаяся функция.
