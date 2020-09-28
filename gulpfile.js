@@ -101,7 +101,7 @@ function cleanimg() {
 // Мониторим файлы препроцессора на изменения
 // Мониторим файлы HTML на изменения
 function startwatch() {
-  watch(['app/**/*.js', '!app/**/*.min.js'], scripts);
+  watch(['app/**/*.js', '!app/**/app.min.js'], scripts);
   watch('app/**/' + preprocessor + '/**/*', styles);
   watch('app/**/*.html').on('change', browserSync.reload);
 }
