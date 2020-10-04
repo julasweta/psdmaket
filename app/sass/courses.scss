@@ -1,0 +1,136 @@
+@import "mixin.scss";
+
+.courses {
+    .containers {
+      @include  containers();
+        .courses_block {
+            @include block();
+            height: auto;
+            .courses_block_name {
+                @include block_name();
+            }
+
+            .line {
+               @include line();
+
+            }
+
+            .courses_items {
+                @include items();
+                display: flex;
+
+                .courses_item {
+                    width: 35%;
+                    height: 465px;
+                    display: block;
+
+                    .courses_item_img {
+                        width: 100%;
+                        height: 220px;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                    }
+
+                    .courses_item_info {
+                        width: 100%;
+                        border: 1px solid rgb(235, 235, 235);
+                        text-align: center;
+
+                        .courses_item_info_photo {
+                            background-repeat: no-repeat;
+                            border-radius: 50%;
+                            margin-top: 2em;
+                            width: 60px;
+                            height: 60px;
+                            margin-left: auto;
+                            margin-right: auto;
+                        }
+
+                        .courses_item_info_famyly {
+                            font-size: 14px;
+                            font-family: $roboto;
+                            color: #59606a;
+                            line-height: 24px;
+                        }
+
+                        .courses_item_info_text {
+                            font-size: 18px;
+                            font-family: $roboto;
+                            font-weight: 600;
+                            color: rgb(41, 47, 59);
+                            line-height: 26px;
+                            width: 240px;
+                            height: 60px;
+                            margin-left: auto;
+                            margin-right: auto;
+                            margin-bottom: 3%;
+                        }
+                    }
+
+                    .courses_item_info_prise {
+                        width: 100%;
+                        border: 1px solid rgb(235, 235, 235);
+                        height: 40px;
+                        display: inline-block;
+
+
+                        .prise {
+                            font-size: 14px;
+                            font-family: $poppins;
+                            color: red;
+                            font-weight: bold;
+                            text-transform: uppercase;
+                            line-height: 2.571;
+                            text-align: left;
+                            float: left;
+                            margin-left: 5%;
+                        }
+
+                        .like {
+                            font-size: 14px;
+                            font-family: $roboto;
+                            font-weight: bold;
+                            text-transform: uppercase;
+                            text-align: center;
+                            color: #000;
+                            display: flex;
+                            float: right;
+                            line-height: 2.571;
+                            margin-right: 5%;
+                            .like1 {
+                                padding-right: 1em;
+                                :before {
+                                    content: "\f1ae";
+                                    font-family: $awesome;
+                                    color: rgb(178, 182, 187);
+                                    width: 2em;
+                                    height: 2em;
+                                }
+                            }
+
+                            .like2 {
+                                :before {
+                                    content: "\f086";
+                                    font-family: $awesome;
+                                    color: rgb(178, 182, 187);
+                                    width: 2em;
+                                    height: 2em;
+                                }
+                            }
+                        }
+
+
+                    }
+                }
+
+
+            }
+
+            .courses_btn{
+                @include btn();
+margin-top: 30px;
+margin-bottom: 80px;
+            }
+        }
+    }
+}

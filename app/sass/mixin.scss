@@ -1,0 +1,69 @@
+//переменные
+$oregano:Oregano,
+cursive;
+$roboto:Roboto,
+sans-serif;
+$poppins:Poppins,
+sans-serif;
+$awesome:Font Awesome\ 5 Free;
+
+@mixin block() {
+    width: 100%;
+    height: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+@mixin containers() {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+@mixin items {
+    justify-content: space-between;
+    align-content: space-between;
+}
+
+@mixin block_item() {
+    width: 32%;
+    height: 260px;
+    color: rgb(255, 255, 255);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@mixin btn() {
+    background-color: rgb(30, 175, 19);
+    width: 230px;
+    height: 45px;
+    border-radius: 85px;
+    margin-left: auto;
+    margin-right: auto;
+
+    .btn_text {
+        line-height: 3.3em;
+        font-family: $roboto;
+        color: white;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+}
+
+
+@mixin block_name {
+    font-size: 48px;
+    font-family: $oregano;
+    color: rgb(41, 47, 59);
+    line-height: 36px;
+    padding-top: 80px;
+}
+
+@mixin line{
+     background-color: rgb(30, 175, 19);
+     width: 70px;
+     height: 4px;
+     margin: 17px auto 40px auto;
+}

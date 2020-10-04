@@ -1,40 +1,29 @@
 // подключение файлов стилей и шрифтов
-@import '../css/reset';
-@import '../../node_modules/normalize.css/normalize';
 @import'../../node_modules/swiper/swiper-bundle';
 @import'../../node_modules/swiper/swiper-bundle.min';
 @import'../../node_modules/swiper/components/pagination/pagination.scss';
-@import url('https://fonts.googleapis.com/css2?family=Oregano&family=PT+Serif&family=Roboto&display=swap');
-@import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oregano:ital@0;1&display=swap" rel="stylesheet');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;600&display=swap" rel="stylesheet');
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome';
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/regular.scss";
-@import "../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
-@import "../../node_modules/@fortawesome/fontawesome-free/scss/v4-shims.scss";
+//@import "../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
+//@import "../../node_modules/@fortawesome/fontawesome-free/scss/v4-shims.scss";
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/icons.scss";
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/mixins";
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/variables";
+@import "form.scss";
+@import "white_block.scss";
+@import "courses.scss";
+@import "counters.scss";
+@import "blogs.scss";
+@import "startCoach.scss";
+@import "stories.scss";
+@import "mixin.scss";
+@import '../css/reset';
 
 
-//переменные
-$oregano:Oregano,
-cursive;
-$roboto:Roboto,
-sans-serif;
-$myriad:myriad-pro,
-sans-serif;
-
-@mixin btn() {
-    background-color: rgb(30, 175, 19);
-    box-shadow: 0px 16px 35px 0px rgba(15, 46, 81, 0.2);
-    width: 230px;
-    height: 45px;
-border-radius: 85px;
-line-height: 22px;
-font-family: $roboto;
-color:white ;
-text-align: center;
-padding-top: 3%;
-}
 
 
 //убираем нижнюю прокрутку
@@ -49,14 +38,15 @@ a {
 body {
     background-color: #ffffff;
     font-family: $oregano;
-    font-size: 87.5%;
-
+    font-size: 14px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
 }
-
 
 // HEADER
 .header {
-    width: 100%;
+    @include block();
     height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
@@ -65,7 +55,6 @@ body {
 
 .img1 {
     background-image: url('../images/src/686.jpg');
-
 }
 
 .img1::before {
@@ -75,26 +64,13 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.466);
     z-index: 1;
 }
 
 .img2 {
     background-image: url('../images/src/banner-1033925_1920.jpg');
 }
-
-.header_top {
-    position: fixed;
-    background-color: transparentize(#252a35, .3);
-    width: 100%;
-    height: 100px;
-    position: relative;
-    display: flex;
-
-    z-index: 999;
-    left: 0;
-}
-
 
 .container {
     width: 100%;
@@ -104,16 +80,17 @@ body {
 .header_top {
     background-color: transparentize(#252a35, .3);
     height: 100px;
+    width: 100%;
+    position: relative;
     display: flex;
-    position: absolute;
+    z-index: 3;
 
     .logo {
-
         position: static;
         color: white;
-        width: 14%;
-        padding-left: 3%;
-        padding-top: 2%;
+        width: 15%;
+        margin-left: 3%;
+        margin-top: 2%;
 
         .logotyp {
             background-image: url('../images/src/logo.png');
@@ -125,19 +102,18 @@ body {
     }
 
     .menu {
-        padding-top: 2%;
         width: 40%;
-        padding-left: 12%;
+        margin-left: 9%;
         font-family: $roboto;
         font-weight: bold;
-        line-height: 2.143;
+ margin-top: 3%;
 
         ol li {
             display: inline-block;
 
             a {
                 color: rgb(255, 255, 255);
-                margin-right: 3.2em;
+                margin-right: 2em;
 
                 &:hover {
                     border-bottom: 2px solid #0be60b;
@@ -147,18 +123,17 @@ body {
     }
 
     .hotline {
-        width: 22%;
-        margin-left: 3%;
+        width: 24%;
+        margin-left: 1%;
         display: flex;
-        color: rgb(255, 255, 255);
-        font-family: $roboto;
-        font-weight: bold;
-        line-height: 2.143;
-        margin-right: 1%;
-        padding-top: 2%;
+ margin-top: 2.6%;
 
         .hot {
             padding-right: 5%;
+            color: rgb(255, 255, 255);
+            font-family: $roboto;
+            font-weight: bold;
+            line-height: 21px;
         }
 
         a {
@@ -177,14 +152,14 @@ body {
         height: 2em;
         margin-right: 2%;
         opacity: 0.102;
-        padding-top: 2%;
+         margin-top: 2%;
     }
 
     .web {
         display: flex;
         width: 8%;
-        padding-right: 3%;
-        padding-top: 2%;
+        margin-right: 3%;
+         margin-top: 2%;
     }
 }
 
@@ -198,47 +173,51 @@ body {
 }
 
 .icon-b {
-    color: #5c6262;
+    color: #3f4242;
     font-size: 2em;
-
-
 }
 
 /* HEADER TEXT */
 .header_text {
-    display: table;
-    width: 730px;
-    padding-left: 365px;
-    padding-top: 205px;
+    display: inline-table;
+    width: 630px;
+    margin-left: 365px;
+    margin-top: 205px;
     position: absolute;
-    z-index: 22;
+    z-index: 2;
+    color: rgb(255, 255, 255);
+    text-align: left;
+
     .item_name {
-        font-size: 60px;
+        font-size: 4.28em;
         font-family: $oregano;
-        color: rgb(255, 255, 255);
-        line-height: 0.6;
+        line-height: 36px;
 
     }
 
     .item_text1 {
-        font-size: 100%;
-        color: rgb(255, 255, 255);
-        letter-spacing: 225%;
-        padding-top: 1.6em;
+        font-size: 1.14em;
+        font-family: $roboto;
+        font-style: italic;
+        margin-top: 1em;
     }
 
     .item_text2 {
-        padding-top: 2.2em;
-        font-size: 112.5%;
-        color: rgb(255, 255, 255);
+        margin-top: 30px;
+        font-size: 1.28em;
         font-family: $roboto;
-        line-height: 30px; //вісота между А А
-        letter-spacing: 0; //ширина между V A
+        line-height: 30px;
+        /* letter-spacing: 0; //ширина между V A*/
     }
-.header_text_btn{
-    @include btn();
-margin-top: 55px;
-}
+
+    .header_text_btn {
+        @include btn();
+        text-align: center;
+        margin-top: 7%;
+        a{
+            color: white;
+        }
+    }
 }
 
 /* CAROUSEL */
@@ -250,13 +229,15 @@ margin-top: 55px;
 
 //прозрачная кнопка с ободком
 .swiper-pagination-bullet-active-next,
-.swiper-pagination-bullet-active-prev {
+.swiper-pagination-bullet-active-prev,
+.swiper-pagination-bullet {
     box-shadow: rgb(245, 228, 228) 0 0 0 2px,
         #061108 0 0 0 3px;
     border-radius: 5px;
     border-style: solid;
     opacity: 1;
 }
+
 .swiper-button-next,
 .swiper-button-prev {
     color: white;

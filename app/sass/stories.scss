@@ -1,0 +1,34 @@
+@import "mixin.scss";
+
+.stories {
+    .stories_block {
+        @include block();
+        .containers {
+            @include containers();
+            .stories_name {
+                @include block_name
+            }
+
+            .line {
+                @include line
+            }
+
+            .stories_content {
+                .stories_content_images {
+                    .stories_content_img_txt {}
+
+                    .stories_content_img {}
+                }
+            }
+            .stories_content_story {
+                .stories_content_story_name {}
+
+                .stories_content_story_text {}
+
+                .stories_content_story_famyly {}
+
+                .stories_content_story_job {}
+            }
+        }
+    }
+}

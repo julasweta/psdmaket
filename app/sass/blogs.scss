@@ -1,0 +1,66 @@
+@import "mixin.scss";
+
+.blog {
+    .blog_block {
+        @include block();
+        background-color: rgb(247, 247, 247);
+
+        .containers {
+            @include containers();
+
+            .block_name {
+                @include block_name();
+                margin-top: 0;
+            }
+
+            .line {
+                @include line();
+            }
+
+            .blog_block_items {
+                @include items();
+                display: flex;
+
+
+                .blog_block_item {
+                    @include block_item();
+
+                    .blog_block_item_img {
+                        width: 100%;
+                        height: 235px;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                    }
+
+                    .blog_block_item_category {
+                        color: #1eaf13;
+                        font-size: 12px;
+                        font-family: $roboto;
+                        text-transform: uppercase;
+                        line-height: 30px;
+                        letter-spacing: 0.2em;
+                        margin-top: 30px;
+                    }
+
+                    .blog_block_item_name {
+                        color: black;
+                        font-size: 18px;
+                        font-family: $roboto;
+                        line-height: 30px;
+                        font-weight: 600;
+                    }
+
+                    .blog_block_item_data {
+                        color: #59606a;
+                        font-size: 12px;
+                        font-family: $roboto;
+                        line-height: 30px;
+                        text-transform: uppercase;
+                        text-decoration: underline;
+
+                    }
+                }
+            }
+        }
+    }
+}

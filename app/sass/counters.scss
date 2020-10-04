@@ -1,0 +1,39 @@
+@import "mixin.scss";
+
+.count{
+    top: 2%;
+    left: 50%;
+    background-image: url(../images/src/count.jpg);;
+    height: 275px;
+    background-repeat: no-repeat;
+    box-shadow: inset 6px -5px 94px 71px rgba(10, 1, 1, 0.822);
+
+    .counters_block {
+        @include containers();
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        color: rgb(255, 255, 255);
+
+.counters_item{
+    display: flex;
+     width: 22em;
+     padding-top: 115px;
+     position: static;
+    &_number{
+            font-size: 60px;
+            color: rgb(30, 175, 19);
+            margin-right: 10%;
+ }
+    &_text{
+            font-size: 16px;
+            font-family: $roboto;
+            font-weight: 600;
+            line-height: 24px;
+            text-transform: uppercase;
+            width: 100px;
+            text-align: left;
+    }
+}
+    }
+}
